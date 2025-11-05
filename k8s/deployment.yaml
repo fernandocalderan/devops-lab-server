@@ -16,36 +16,7 @@ spec:
       containers:
         - name: api
           image: proyecto_devops-app:latest
-          apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: devops-api
-  namespace: devops-app
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: devops-api
-  template:
-    metadata:
-      labels:
-        app: devops-api
-    spec:
-      containers:
-        - name: api
-          image: proyecto_devops-app:latest
-          ports:
-            - containerPort: 8000
-          env:
-            - name: POSTGRES_USER
-              value: "usuario"
-            - name: POSTGRES_PASSWORD
-              value: "clave"
-            - name: POSTGRES_DB
-              value: "ejemplo"
-            - name: POSTGRES_HOST
-              value: "database"
-              imagePullPolicy: Never
+          imagePullPolicy: Never
           ports:
             - containerPort: 8000
           env:
